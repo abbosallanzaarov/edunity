@@ -36,6 +36,7 @@
                                 <th>No</th>
                                 <th>Name</th>
                                 <th>Mentor</th>
+                                <th>Kurs moni</th>
                                 <th>Status</th>
                                 <th>BTN</th>
 
@@ -49,7 +50,8 @@
                                         <tr>
                                             <td>#</td>
                                             <td><input placeholder="Group full name" value="{{ $groupEdit->name }}" type="text" name="name" class="form-control m-0" required="required"></td>
-                                            <td><input placeholder="Group's price"  value="{{ $groupEdit->mentor_id }}" type="number" name="mentor_id" class="form-control m-0" required="required"></td>
+                                            <td><input placeholder="Group's mentor"  value="{{ $groupEdit->mentor_id }}" type="number" name="mentor_id" class="form-control m-0" required="required"></td>
+                                            <td><input placeholder="Group's course"  value="{{ $groupEdit->course_id }}" type="number" name="course_id" class="form-control m-0" required="required"></td>
                                             <td><input placeholder="Desription"  value="{{ $groupEdit->active }}" type="number" name="active" class="form-control m-0" required="required"></td>
 
                                             <td><button class="btn btn-primary">Update</button></td>
@@ -62,7 +64,8 @@
                                     <tr>
                                         <td>#</td>
                                         <td><input placeholder="Group full name" type="text" name="name" class="form-control m-0" required="required"></td>
-                                        <td><input placeholder="Group's price"  type="number" name="mentor_id" class="form-control m-0" required="required"></td>
+                                        <td><input placeholder="Group's mentor"  type="number" name="mentor_id" class="form-control m-0" required="required"></td>
+                                        <td><input placeholder="Group's course"  type="number" name="course_id" class="form-control m-0" required="required"></td>
                                         <td><input placeholder="Desription"  type="number" name="active" class="form-control m-0" required="required"></td>
 
 
@@ -89,6 +92,7 @@
                                 <th>No</th>
                                 <th>Name</th>
                                 <th>Mentor</th>
+                                <th>Kurs nomi</th>
                                 <th>status</th>
                                 <th>Button</th>
                               </tr>
@@ -99,6 +103,7 @@
                                     <td  class="seconds" scope="row">{{ $group->id }}</th>
                                     <td>{{ $group->name }}</td>
                                     <td>{{ $group->mentor_id }}</td>
+                                    <td>{{ $group->course_id }}</td>
                                     <td class="seconds">{{ $group->active }}</td>
                                     <td  class="d-flex align-center justify-content-around p-2">
                                         <a href="{{ route('group.edit',$group->id) }}" class="m-2 p-3"><i class="bi bi-pencil btn-success w-100 p-2" style='border-radius:5px'>Edit</i></a>
