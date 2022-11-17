@@ -31,41 +31,41 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
-
-    <link rel="stylesheet" href="demo/assets/vendor/fonts/boxicons.css@id=87122b3a3900320673311cebdeb618da" />
-    <link rel="stylesheet" href="demo/assets/vendor/fonts/fontawesome.css@id=cfafea31c584abe0bcf920c389ea9b3f" />
-    <link rel="stylesheet" href="demo/assets/vendor/fonts/flag-icons.css@id=403b97c176f3cdf56a3cbf09107ee240" />
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+        <link rel="stylesheet" href="{{asset("demo/assets/vendor/fonts/boxicons.css@id=87122b3a3900320673311cebdeb618da")}}" />
+        <link rel="stylesheet" href="{{asset("demo/assets/vendor/fonts/fontawesome.css@id=cfafea31c584abe0bcf920c389ea9b3f")}}" />
+    <link rel="stylesheet" href="{{asset("demo/assets/vendor/fonts/flag-icons.css@id=403b97c176f3cdf56a3cbf09107ee240")}}" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="demo/assets/vendor/css/rtl/core-dark.css@id=863bbf103551fe7d6276dae1217b30a0"
+    <link rel="stylesheet" href="{{asset("demo/assets/vendor/css/rtl/core-dark.css@id=863bbf103551fe7d6276dae1217b30a0")}}"
         class="template-customizer-core-css" />
     <link rel="stylesheet"
-        href="demo/assets/vendor/css/rtl/theme-default-dark.css@id=3730ac5543e6e20fb4568c3c58d6109b"
+        href="{{asset("demo/assets/vendor/css/rtl/theme-default-dark.css@id=3730ac5543e6e20fb4568c3c58d6109b")}}"
         class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="demo/assets/css/demo.css@id=8a804dae81f41c0f9fcbef2fa8316bdd" />
+    <link rel="stylesheet" href="{{asset("demo/assets/css/demo.css@id=8a804dae81f41c0f9fcbef2fa8316bdd")}}" />
 
 
     <link rel="stylesheet"
-        href="demo/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css@id=d9fa6469688548dca3b7e6bd32cb0dc6" />
+        href="{{asset("demo/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css@id=d9fa6469688548dca3b7e6bd32cb0dc6")}}" />
     <link rel="stylesheet"
-        href="demo/assets/vendor/libs/typeahead-js/typeahead.css@id=8fc311b79b2aeabf94b343b6337656cf" />
+        href="{{asset("demo/assets/vendor/libs/typeahead-js/typeahead.css@id=8fc311b79b2aeabf94b343b6337656cf")}}" />
 
     <!-- Vendor Styles -->
-    <link rel="stylesheet" href="demo/assets/vendor/libs/apex-charts/apex-charts.css">
+    <link rel="stylesheet" href="{{asset("demo/assets/vendor/libs/apex-charts/apex-charts.css")}}">
 
 
     <!-- Page Styles -->
 
     <!-- Include Scripts for customizer, helper, analytics, config -->
     <!-- laravel style -->
-    <script src="demo/assets/vendor/js/helpers.js"></script>
+    <script src="{{asset("demo/assets/vendor/js/helpers.js")}}"></script>
     <!-- beautify ignore:start -->
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
-  <script src="demo/assets/vendor/js/template-customizer.js"></script>
+  <script src="{{asset("demo/assets/vendor/js/template-customizer.js")}}"></script>
 
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-  <script src="demo/assets/js/config.js"></script>
+  <script src="{{asset("demo/assets/js/config.js")}}"></script>
 
   <script>
       window.templateCustomizer = new TemplateCustomizer({
@@ -184,9 +184,9 @@
 
 
                     <li class="menu-item active open">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                        <a href="#" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                            <div>Mentor</div>
+                            <div>Menu  </div>
                         </a>
 
 
@@ -195,32 +195,55 @@
 
 
                             <li class="menu-item active">
-                                <a href="../../demo-4.2" class="menu-link">
-                                    <div>Analytics</div>
+                                <a href="{{route('mentor.index')}}" class="menu-link">
+                                    <div>Mentor </div>
                                 </a>
 
 
                             </li>
 
 
+                            </li>
+                            <li class="menu-item active open">
+                                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                    <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                                    <div>Student</div>
+                                </a>
+                                <ul class="menu-sub">
+                                    <li class="menu-item active">
+                                        <a href="{{ route('student.index') }}" class="menu-link">
+                                            <div>Hamma talabalar</div>
+                                        </a>
+                                    </li>
+                                    {{-- <li class="menu-item ">
+                                        <a href="{{ route('student.create') }}" class="menu-link">
+                                            <div>Talaba yaratish</div>
+                                        </a>
+                                    </li> --}}
+                                </ul>
+                            </li>
 
                             <li class="menu-item ">
-                                <a href="../lang/pt" class="menu-link">
-                                    <div>CRM</div>
+                                <a href="{{ route('course.index') }}" class="menu-link">
+                                    <i class="menu-icon tf-icons bx bx-calendar"></i>
+                                    <div>Course</div>
                                 </a>
-
-
                             </li>
-
-
-
                             <li class="menu-item ">
-                                <a href="../dashboard/ecommerce" class="menu-link">
-                                    <div>comércio eletrônico</div>
+                                <a href="{{ route('team.index') }}" class="menu-link">
+                                    <i class="menu-icon tf-icons bx bx-calendar"></i>
+                                    <div>Group</div>
                                 </a>
-
-
                             </li>
+                            <li class="menu-item ">
+                                <a href="{{ route('prise.index') }}" class="menu-link">
+                                    <i class="menu-icon tf-icons bx bx-calendar"></i>
+                                    <div>Prises</div>
+                                </a>
+                            </li>
+                        </ul>
+
+
                         </ul>
                     </li>
 
@@ -714,10 +737,15 @@
                                         <div class="dropdown-divider"></div>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="javascript:void(0)">
-                                            <i class='bx bx-log-in me-2'></i>
-                                            <span class="align-middle">Login</span>
-                                        </a>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                                     </li>
                                 </ul>
                             </li>
@@ -739,7 +767,7 @@
 
                 <!-- Content wrapper -->
                 {{-- <div class="content-wrapper"> --}}
-                    @yield('content')
+                    <div class="container">@yield('content')</div>
                     <!-- Content -->
 
                     <!-- / Content -->
@@ -768,25 +796,25 @@
 
     <!-- Include Scripts -->
     <!-- BEGIN: Vendor JS-->
-    <script src="demo/assets/vendor/libs/jquery/jquery.js@id=b49db52ac0f1a7a5d75b32b6326b285f"></script>
-    <script src="demo/assets/vendor/libs/popper/popper.js@id=1f8255bd80f17f73ba33c2d1210e5763"></script>
-    <script src="demo/assets/vendor/js/bootstrap.js@id=e310c0547362e972fb0e431ca7b5f438"></script>
-    <script src="demo/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js@id=9d86308b7c41e76a7dc8472907865b83">
+    <script src="{{asset("demo/assets/vendor/libs/jquery/jquery.js@id=b49db52ac0f1a7a5d75b32b6326b285f")}}"></script>
+    <script src="{{asset("demo/assets/vendor/libs/popper/popper.js@id=1f8255bd80f17f73ba33c2d1210e5763")}}"></script>
+    <script src="{{asset("demo/assets/vendor/js/bootstrap.js@id=e310c0547362e972fb0e431ca7b5f438")}}"></script>
+    <script src="{{asset("demo/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js@id=9d86308b7c41e76a7dc8472907865b83")}}">
     </script>
-    <script src="demo/assets/vendor/libs/hammer/hammer.js@id=2a80ebd1aa77a9e33ec54b68ee8de5e0"></script>
-    <script src="demo/assets/vendor/libs/i18n/i18n.js@id=8552a7b6c4b850c1768e5ed4409f1b97"></script>
-    <script src="demo/assets/vendor/libs/typeahead-js/typeahead.js@id=8c315d7e2e7b09a04d8e8efead923241"></script>
-    <script src="demo/assets/vendor/js/menu.js@id=f45ec38086f86335b91fc2fdcaaadab8"></script>
-    <script src="demo/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+    <script src="{{asset("demo/assets/vendor/libs/hammer/hammer.js@id=2a80ebd1aa77a9e33ec54b68ee8de5e0")}}"></script>
+    <script src="{{asset("demo/assets/vendor/libs/i18n/i18n.js@id=8552a7b6c4b850c1768e5ed4409f1b97")}}"></script>
+    <script src="{{asset("demo/assets/vendor/libs/typeahead-js/typeahead.js@id=8c315d7e2e7b09a04d8e8efead923241")}}"></script>
+    <script src="{{asset("demo/assets/vendor/js/menu.js@id=f45ec38086f86335b91fc2fdcaaadab8")}}"></script>
+    <script src="{{asset("demo/assets/vendor/libs/apex-charts/apexcharts.js")}}"></script>
     <!-- END: Page Vendor JS-->
     <!-- BEGIN: Theme JS-->
-    <script src="demo/assets/js/main.js@id=3c628e87a9befaa350e1f822744b8142"></script>
+    <script src="{{asset("demo/assets/js/main.js@id=3c628e87a9befaa350e1f822744b8142")}}"></script>
 
     <!-- END: Theme JS-->
     <!-- Pricing Modal JS-->
     <!-- END: Pricing Modal JS-->
     <!-- BEGIN: Page JS-->
-    <script src="demo/assets/js/dashboards-analytics.js"></script>
+    <script src="{{asset("demo/assets/js/dashboards-analytics.js")}}"></script>
     <!-- END: Page JS-->
 
 </body>

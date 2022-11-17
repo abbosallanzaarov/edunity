@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CoursePatchRequest;
+use App\Http\Requests\CoursePostRequest;
 use App\Models\course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
 {
@@ -14,8 +17,9 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $course = course::all();
-        return view('course.index',compact('course'));
+        $courses = course::all();
+        $course_count = count($courses);
+        return view('course.index',compact('courses','course_count'));
     }
 
     /**
@@ -34,9 +38,13 @@ class CourseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CoursePostRequest $request)
     {
-        //
+        $create_course = course::create($request->input());
+        if($create_course){
+            return  back()->with('saccess' , 'Kurs Yaratildi  Gap Yo\'q');
+        }
+
     }
 
     /**
@@ -56,10 +64,10 @@ class CourseController extends Controller
      * @param  \App\Models\course  $course
      * @return \Illuminate\Http\Response
      */
-    public function edit(course $course)
+    public function edit($id)
     {
-        $course = course::find($course);
-        return view('course.edit',compact('course'));
+        $course = course::find($id);
+        return view('course.edit' , compact('course'));
     }
 
     /**
@@ -69,9 +77,18 @@ class CourseController extends Controller
      * @param  \App\Models\course  $course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, course $course)
+    public function update(Request $request, $id)
     {
-        //
+        //corse find id
+        $course = course::find($id);
+        if($course){
+            $update = $course->update($request->input());
+
+            $message =  Auth::user()->name . ' o\'zgarish muvaffaqiyatli tugallandi ';
+            if($update){
+            return redirect()->route('course.index')->with('update_success' , $message );
+            }
+        }
     }
 
     /**
@@ -80,8 +97,13 @@ class CourseController extends Controller
      * @param  \App\Models\course  $course
      * @return \Illuminate\Http\Response
      */
-    public function destroy(course $course)
+    public function destroy($id )
     {
-        //
+        $course = course::find($id);
+        if($course){
+            $course->delete();
+            $message = $course->full_name . ' ' .' Kurs O\'chirildi';
+            return back()->with('deleteCourse' , $message);
+        }
     }
 }

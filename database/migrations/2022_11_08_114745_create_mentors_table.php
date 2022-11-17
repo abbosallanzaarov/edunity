@@ -20,7 +20,6 @@ class CreateMentorsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('salary')->nullable();
             $table->string('image')->nullable();
-
             $table->string('email')->nullable();
             $table->string('password')->nullable();
         });

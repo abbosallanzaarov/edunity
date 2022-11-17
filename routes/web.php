@@ -1,9 +1,10 @@
 <?php
 
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\GroupController;
 use App\Http\Controllers\MentorCantroller;
+use App\Http\Controllers\SearchCantroller;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Router;
 
@@ -25,11 +26,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//mentor page Dashboard
+Route::get('/mentor/dashboard' ,[App\Http\Controllers\HomeController::class, 'mentor_page'])->name('mentor.dashboard');
 // mentor router
 Route::resource('mentor',MentorCantroller::class)->names('mentor');
-// student router
+Route::get('mentor/search' , [SearchCantroller::class , 'mentor_search'])->name('mentor.search');
 Route::resource('student',StudentController::class)->names('student');
 // course router
 Route::resource('course',CourseController::class)->names('course');
 // group router
-Route::resource('group',GroupController::class)->names('group');
+Route::resource('team',TeamController::class)->names('team');
+// prises
+Route::resource('prise',Prisescontroller::class)->names('prise');

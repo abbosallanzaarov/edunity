@@ -25,7 +25,8 @@ class User extends Authenticatable
         'training_center_name',
         'training_center_image',
         'role',
-        'role_id'
+        'role_id',
+        'user_image'
     ];
 
     /**

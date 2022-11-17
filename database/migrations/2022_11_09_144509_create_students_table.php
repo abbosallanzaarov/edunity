@@ -21,8 +21,7 @@ class CreateStudentsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('image')->nullable();
             $table->string('group_id');
-            $table->string('course_id');
-
+            $table->string('course_id')->nullable();
             $table->string('email')->nullable();
             $table->string('password')->nullable();
         });
