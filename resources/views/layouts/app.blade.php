@@ -10,9 +10,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Dashboard - Analytics |
-        Sneat -
-        Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Training School - Pro</title>
     <meta name="description"
         content="Most Powerful &amp; Comprehensive Bootstrap 5 HTML Admin Dashboard Template built for developers!" />
     <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
@@ -31,6 +29,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
+
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
         <link rel="stylesheet" href="{{asset("demo/assets/vendor/fonts/boxicons.css@id=87122b3a3900320673311cebdeb618da")}}" />
         <link rel="stylesheet" href="{{asset("demo/assets/vendor/fonts/fontawesome.css@id=cfafea31c584abe0bcf920c389ea9b3f")}}" />
@@ -43,6 +42,7 @@
         href="{{asset("demo/assets/vendor/css/rtl/theme-default-dark.css@id=3730ac5543e6e20fb4568c3c58d6109b")}}"
         class="template-customizer-theme-css" />
     <link rel="stylesheet" href="{{asset("demo/assets/css/demo.css@id=8a804dae81f41c0f9fcbef2fa8316bdd")}}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
     <link rel="stylesheet"
@@ -50,8 +50,27 @@
     <link rel="stylesheet"
         href="{{asset("demo/assets/vendor/libs/typeahead-js/typeahead.css@id=8fc311b79b2aeabf94b343b6337656cf")}}" />
 
+
+
+    <link rel="stylesheet" href="{{ asset('demo/assets/vendor/fonts/boxicons.css@id=87122b3a3900320673311cebdeb618da')}}" />
+    <link rel="stylesheet" href="{{ asset('demo/assets/vendor/fonts/fontawesome.css@id=cfafea31c584abe0bcf920c389ea9b3f')}}" />
+    <link rel="stylesheet" href="{{ asset('demo/assets/vendor/fonts/flag-icons.css@id=403b97c176f3cdf56a3cbf09107ee240')}}" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{{ asset('demo/assets/vendor/css/rtl/core-dark.css@id=863bbf103551fe7d6276dae1217b30a0')}}"
+        class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{ asset('demo/assets/vendor/css/rtl/theme-default-dark.css@id=3730ac5543e6e20fb4568c3c58d6109b')}}"
+        class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{ asset('demo/assets/css/demo.css@id=8a804dae81f41c0f9fcbef2fa8316bdd')}}" />
+
+
+    <link rel="stylesheet"
+        href="{{ asset('demo/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css@id=d9fa6469688548dca3b7e6bd32cb0dc6')}}" />
+    <link rel="stylesheet"
+        href="{{ asset('demo/assets/vendor/libs/typeahead-js/typeahead.css@id=8fc311b79b2aeabf94b343b6337656cf')}}" />
+
     <!-- Vendor Styles -->
-    <link rel="stylesheet" href="{{asset("demo/assets/vendor/libs/apex-charts/apex-charts.css")}}">
+    <link rel="stylesheet" href="{{ asset('demo/assets/vendor/libs/apex-charts/apex-charts.css')}}">
 
 
     <!-- Page Styles -->
@@ -192,54 +211,86 @@
 
                         <ul class="menu-sub">
 
-
-
-                            <li class="menu-item active">
-                                <a href="{{route('mentor.index')}}" class="menu-link">
-                                    <div>Mentor </div>
-                                </a>
-
-
-                            </li>
-
-
                             </li>
                             <li class="menu-item active open">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                                    <div>Student</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item active">
-                                        <a href="{{ route('student.index') }}" class="menu-link">
-                                            <div>Hamma talabalar</div>
-                                        </a>
-                                    </li>
-                                    {{-- <li class="menu-item ">
-                                        <a href="{{ route('student.create') }}" class="menu-link">
-                                            <div>Talaba yaratish</div>
-                                        </a>
-                                    </li> --}}
-                                </ul>
+                                <li class="menu-item active">
+                                    <a href="{{route('mentor.index')}}" class="menu-link">
+                                        <div>Mentor </div>
+                                    </a>
+                                </li>
+                                <li class="menu-item active">
+                                    <a href="{{ route('student.index') }}" class="menu-link">
+                                        <div>Hamma talabalar</div>
+                                    </a>
+                                </li>
                             </li>
 
                             <li class="menu-item ">
                                 <a href="{{ route('course.index') }}" class="menu-link">
-                                    <i class="menu-icon tf-icons bx bx-calendar"></i>
+                                    <i class="menu-icon tf-icons bx bx-book"></i>
                                     <div>Course</div>
                                 </a>
                             </li>
                             <li class="menu-item ">
                                 <a href="{{ route('team.index') }}" class="menu-link">
-                                    <i class="menu-icon tf-icons bx bx-calendar"></i>
+                                    <i class="menu-icon tf-icons bx bx-group"></i>
                                     <div>Group</div>
+                                </a>
+
+
+
+                            </li>
+                            <li class="menu-item ">
+                                <a href="{{ route('gift.index') }}" class="menu-link">
+                                    <i class="menu-icon tf-icons bx bx-gift"></i>
+                                    <div>Sovg'alar</div>
                                 </a>
                             </li>
                             <li class="menu-item ">
-                                <a href="{{ route('prise.index') }}" class="menu-link">
-                                    <i class="menu-icon tf-icons bx bx-calendar"></i>
-                                    <div>Prises</div>
+                                <a href="{{ route('gift.history.index') }}" class="menu-link">
+                                    <i class="menu-icon tf-icons bx bx-gift"></i>
+                                    <div>Sovg'alar Topshirish</div>
                                 </a>
+                            </li>                            <li class="menu-item ">
+                                <a href="{{ route('payment.index') }}" class="menu-link">
+                                    <i class="menu-icon tf-icons bx bx-money"></i>
+                                    <div>To'lovlar</div>
+                                </a>
+                            </li>
+                             <li class="menu-item ">
+                                <a href="{{ route('coin.index') }}" class="menu-link">
+                                    <i class="menu-icon tf-icons bx bx-crown"></i>
+                                    <div>Coinlarni boshqarish</div>
+                                </a>
+                            </li>
+                            <li class="menu-item ">
+                                <a href="{{ route('quiz.index') }}" class="menu-link">
+
+                                    <i class="bi bi-question-square"></i>
+                                    <div>Viktorina</div>
+                                </a>
+                            </li>
+                            <li class="menu-item ">
+                                <a href="{{ route('warning.index') }}" class="menu-link">
+                                    <i class="menu-icon tf-icons bx bx-message-alt-dots"></i>
+                                    <div>Ogahlantirish</div>
+                                </a>
+                            </li>
+                            <li class="menu-item ">
+                                <a href="chatify" class="menu-link">
+                                    <i class="menu-icon tf-icons bx bx-message-alt-dots"></i>
+                                    <div>Chat</div>
+                                </a>
+                            </li>
+                            <li class="menu-item ">
+
+                                <form action="{{ route('logout') }}" method="post" class="menu-link">
+                                    @csrf
+                                    <button class="btn btn-danger d-flex">
+                                        <i class="menu-icon tf-icons bx bx-exit"></i>
+                                        <div>Chiqish</div>
+                                    </button>
+                                </form>
                             </li>
                         </ul>
 
@@ -251,18 +302,6 @@
 
 
 
-
-
-
-
-                    <li class="menu-item ">
-                        <a href="../app/calendar" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-calendar"></i>
-                            <div>Calendário</div>
-                        </a>
-
-
-                    </li>
                 </ul>
 
             </aside>
@@ -306,27 +345,9 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end">
                                     <li>
-                                        <a class="dropdown-item" href="../lang/en" data-language="en">
+                                        <a class="dropdown-item" href="#" data-language="en">
                                             <i class="fi fi-us fis rounded-circle fs-4 me-1"></i>
                                             <span class="align-middle">English</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="../lang/fr" data-language="fr">
-                                            <i class="fi fi-fr fis rounded-circle fs-4 me-1"></i>
-                                            <span class="align-middle">French</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="../lang/de" data-language="de">
-                                            <i class="fi fi-de fis rounded-circle fs-4 me-1"></i>
-                                            <span class="align-middle">German</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="../lang/pt" data-language="pt">
-                                            <i class="fi fi-pt fis rounded-circle fs-4 me-1"></i>
-                                            <span class="align-middle">Portuguese</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -344,16 +365,16 @@
 
                             <!-- Quick links  -->
                             <li class="nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0">
-                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
-                                    data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="{{route('payment.residual')}}"
+                                >
                                     <i class='bx bx-grid-alt bx-sm'></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end py-0">
                                     <div class="dropdown-menu-header border-bottom">
                                         <div class="dropdown-header d-flex align-items-center py-3">
                                             <h5 class="text-body mb-0 me-auto">Shortcuts</h5>
-                                            <a href="javascript:void(0)" class="dropdown-shortcuts-add text-body"
-                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                            <a href="" class="dropdown-shortcuts-add text-body"
+
                                                 title="Add shortcuts"><i class="bx bx-sm bx-plus-circle"></i></a>
                                         </div>
                                     </div>
@@ -440,10 +461,10 @@
 
                             <!-- Notification -->
                             <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-1">
-                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
-                                    data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="{{route('notificate')}}"
+                                >
                                     <i class="bx bx-bell bx-sm"></i>
-                                    <span class="badge bg-danger rounded-pill badge-notifications">5</span>
+                                    <span class="badge bg-danger rounded-pill badge-notifications">{{Session::get('array_count')}}</span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end py-0">
                                     <li class="dropdown-menu-header border-bottom">
@@ -695,7 +716,7 @@
                                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
                                     data-bs-toggle="dropdown">
                                     <div class="avatar avatar-online">
-                                        <img src="../../demo/assets/img/avatars/1.png" alt
+                                        <img src="{{    asset('demo/assets/img/avatars/1.png') }}" alt
                                             class="w-px-40 h-auto rounded-circle">
                                     </div>
                                 </a>
@@ -705,13 +726,13 @@
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-3">
                                                     <div class="avatar avatar-online">
-                                                        <img src="../../demo/assets/img/avatars/1.png" alt
+                                                        <img src="{{ asset('demo/assets/img/avatars/1.png') }}" alt
                                                             class="w-px-40 h-auto rounded-circle">
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
                                                     <span class="fw-semibold d-block">
-                                                        John Doe
+                                                        Abbos
                                                     </span>
                                                     <small class="text-muted">Admin</small>
                                                 </div>
@@ -730,13 +751,14 @@
                                     <li>
                                         <a class="dropdown-item" href="../app/invoice/list">
                                             <i class="bx bx-credit-card me-2"></i>
-                                            <span class="align-middle">Billing</span>
+                                            <span class="align-middle">Admin</span>
                                         </a>
                                     </li>
                                     <li>
                                         <div class="dropdown-divider"></div>
                                     </li>
                                     <li>
+
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
@@ -746,6 +768,9 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+
+
+
                                     </li>
                                 </ul>
                             </li>
@@ -766,28 +791,33 @@
 
 
                 <!-- Content wrapper -->
+
                 {{-- <div class="content-wrapper"> --}}
-                    <div class="container">@yield('content')</div>
+
+
+                <div class="container">
+                    @yield('content')
+
                     <!-- Content -->
-
-                    <!-- / Content -->
-
-                    <!-- Footer -->
-                    <!-- Footer-->
-
-                    <!--/ Footer-->
-                    <!-- / Footer -->
-                    <div class="content-backdrop fade"></div>
                 </div>
-                <!--/ Content wrapper -->
-            </div>
-            <!-- / Layout page -->
-        </div>
+                <!-- / Content -->
 
-        <!-- Overlay -->
-        <div class="layout-overlay layout-menu-toggle"></div>
-        <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-        <div class="drag-target"></div>
+                <!-- Footer -->
+                <!-- Footer-->
+
+                <!--/ Footer-->
+                <!-- / Footer -->
+                <div class="content-backdrop fade"></div>
+            </div>
+            <!--/ Content wrapper -->
+        </div>
+        <!-- / Layout page -->
+    </div>
+
+    <!-- Overlay -->
+    <div class="layout-overlay layout-menu-toggle"></div>
+    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+    <div class="drag-target"></div>
     </div>
     <!-- / Layout wrapper -->
     <!--/ Layout Content -->
@@ -809,12 +839,32 @@
     <!-- END: Page Vendor JS-->
     <!-- BEGIN: Theme JS-->
     <script src="{{asset("demo/assets/js/main.js@id=3c628e87a9befaa350e1f822744b8142")}}"></script>
+    <script src="{{  asset('demo/assets/vendor/libs/jquery/jquery.js@id=b49db52ac0f1a7a5d75b32b6326b285f')}}"></script>
+    <script src="{{ asset('demo/assets/vendor/libs/popper/popper.js@id=1f8255bd80f17f73ba33c2d1210e5763')}}"></script>
+    <script src="{{ asset('demo/assets/vendor/js/bootstrap.js@id=e310c0547362e972fb0e431ca7b5f438')}}"></script>
+    <script src="{{ asset('demo/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js@id=9d86308b7c41e76a7dc8472907865b83')}}">
+    </script>
+    <script src="{{ asset('demo/assets/vendor/libs/hammer/hammer.js@id=2a80ebd1aa77a9e33ec54b68ee8de5e0')}}"></script>
+    <script src="{{ asset('demo/assets/vendor/libs/i18n/i18n.js@id=8552a7b6c4b850c1768e5ed4409f1b97')}}"></script>
+    <script src="{{ asset('demo/assets/vendor/libs/typeahead-js/typeahead.js@id=8c315d7e2e7b09a04d8e8efead923241')}}"></script>
+    <script src="{{ asset('demo/assets/vendor/js/menu.js@id=f45ec38086f86335b91fc2fdcaaadab8')}}"></script>
+    <script src="{{ asset('demo/assets/vendor/libs/apex-charts/apexcharts.js')}}"></script>
+    <!-- END: Page Vendor JS-->
+    <!-- BEGIN: Theme JS-->
+    <script src="{{ asset('demo/assets/js/main.js@id=3c628e87a9befaa350e1f822744b8142')}}"></script>
+
 
     <!-- END: Theme JS-->
     <!-- Pricing Modal JS-->
     <!-- END: Pricing Modal JS-->
     <!-- BEGIN: Page JS-->
+
     <script src="{{asset("demo/assets/js/dashboards-analytics.js")}}"></script>
+    <script src="{{ asset('demo/assets/js/dashboards-analytics.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <!-- END: Page JS-->
 
 </body>

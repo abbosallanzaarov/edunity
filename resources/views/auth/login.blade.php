@@ -1,8 +1,14 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
-@section('content')
+@section('content') --}}
+<link rel="stylesheet" href="{{ asset('vendor/bootstrap-4.1/bootstrap.min.css') }}">
 <div class="container">
     <div class="row justify-content-center">
+        <span class="text-danger">
+            @if($message = Session::get('mentor_error'))
+            {{$message}}
+            @endif
+        </span>
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
@@ -63,7 +69,6 @@
 
 
 
-
                                     <label class="form-check-label" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
@@ -90,4 +95,6 @@
         </div>
     </div>
 </div>
-@endsection
+{{-- @endsection --}}
+
+

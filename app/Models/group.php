@@ -9,5 +9,8 @@ class group extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    // publi function course(){
+    //     return $this->belongsTo(course::class);
+    // }
 
 }

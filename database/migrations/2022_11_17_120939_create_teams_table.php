@@ -20,6 +20,8 @@ class CreateTeamsTable extends Migration
             $table->string('name');
             $table->string('mentor_id')->nullable();
             $table->boolean('active')->nullable();
+            $table->string('active_date')->nullable();
+            $table->string('length')->nullable();
         });
     }
 

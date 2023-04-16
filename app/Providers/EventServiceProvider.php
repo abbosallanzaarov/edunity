@@ -2,10 +2,15 @@
 
 namespace App\Providers;
 
+use App\Models\mentor;
+use App\Observers\MentorObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use App\Events\StudentCreate;
+use App\Listeners\SentToEmailStudent;
+
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -18,6 +23,9 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        StudentCreate::class => [
+            SentToEmailStudent::class
+        ]
     ];
 
     /**
@@ -27,6 +35,6 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        mentor::observe(MentorObserver::class);
     }
 }

@@ -17,7 +17,7 @@
                                 <div class="col-md-4 mb-3">
                                     <label for="validationServer01"> ISM F..</label>
                                     {{-- <input type="text" class="form-control " name="full_name" id="validationServer01" placeholder="name" value="{{old('full_name')}}" > --}}
-                                    <input type="text" name="full_name" class="form-control " id="validationServer03"
+                                    <input type="text" name="full_name" class="form-control" style="width: 200px;" id="validationServer03"
                                         value="{{ old('full_name') }}" placeholder="Name">
                                     @error('name')
                                         <p class="help-block text danger">{{ $message }}</p>
@@ -25,31 +25,25 @@
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="validationServer02">Telefon N..</label>
-                                    <input type="number" name="phone" class="form-control " id="validationServer02"
+                                    <input type="number" name="phone" class="form-control" style="width: 200px;" id="validationServer02"
                                         placeholder="phone" value="{{ old('phone') }}">
                                     @error('phone')
                                         <p class="help-block text danger">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                    <label for="validationServerUsername">email</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="inputGroupPrepend3">@</span>
-                                        </div>
-                                        <input type="text" name="email" class="form-control is-invalid"
-                                            id="validationServerUsername" value="{{ old('email') }}" placeholder="email"
-                                            aria-describedby="inputGroupPrepend3">
-                                        @error('email')
-                                            <p class="help-block text danger">{{ $message }}</p>
-                                        @enderror
-                                    </div>
+                                    <label for="validationServer02">email </label>
+                                    <input type="email" name="email" class="form-control" style="width: 200px;" id="validationServer02"
+                                        placeholder="email" value="{{ old('email') }}">
+                                    @error('phone')
+                                        <p class="help-block text danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6 mb-3">
                                     <label for="validationServer03">Maoshi</label>
-                                    <input type="number" name="salary" class="form-control" id="validationServer03"
+                                    <input type="number" name="salary" class="form-control" style="width: 200px;" id="validationServer03"
                                         value="{{ old('salary') }}" placeholder="Salary">
                                     @error('salary')
                                         <p class="help-block text danger">{{ $message }}</p>
@@ -57,7 +51,7 @@
                                 </div>
                                 <div class="col-md-3 mb-3">
                                     <label for="validationServer04">Rasm</label>
-                                    <input type="file" name="image" class="form-control is-invalid"
+                                    <input type="file" name="image" class="form-control" style="width: 200px;"
                                         id="validationServer04" placeholder="State">
                                     @error('image')
                                         <p class="help-block text danger">{{ $message }}</p>
@@ -65,7 +59,7 @@
                                 </div>
                                 <div class="col-md-3 mb-3">
                                     <label for="validationServer04">Password</label>
-                                    <input type="password" name="password" class="form-control is-invalid"
+                                    <input type="password" name="password" style="width: 200px;" class="form-control "
                                         id="validationServer04" placeholder="Password">
                                     @error('password')
                                         <p class="help-block text danger">{{ $message }}</p>
@@ -88,10 +82,7 @@
             </div>
         </div>
         {{-- modal end --}}
-        <button type="button" style="width: 20rem" class="btn btn-primary ms-5 mt-5 m-3" data-bs-toggle="modal"
-            data-bs-target="#exampleModal">
-            Add Mentor
-        </button>
+
         @if($errors->any())
         <div class="alert alert danger">
         <ul>
@@ -101,16 +92,30 @@
         </ul>
         </div>
         @endif
+        <div class="d-flex justify-content-start my-2" >
+            <div class="mx-2">
+                <input type="search" placeholder="SEARCH" class="form-control">
+            </div>
+            <div class="mx-4">
+                <button type="button" style="width: 10rem" class="btn btn-primary fs-5 " data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                Add Mentor
+            </button>
+            </div>
+
+            <style>
+                #pdf{
+                    font-size: 20px
+                }
+            </style>
+            <div class="text-center">
+
+                {{-- {{$mentors->links()}} --}}
+            </div>
+
+        </div>
         <div class="card-datatable table-responsive">
             <div id="DataTables_Table_2_wrapper" class="dataTables_wrapper dt-bootstrap5">
-                <div class="row" style="margin: 15px">
-                    <div class="col-sm-12 col-md-6 d-flex justify-content-center justify-content-md-end">
-                        <div id="DataTables_Table_2_filter" class="dataTables_filter"><label>Search:<input type="search"
-                                    class="form-control" id="search" placeholder="Search" aria-controls="DataTables_Table_2"></label></div>
-                                    <h5 id="total_records">a</h5>
-                    </div>
-                    {{-- {{$mentors->links()}} --}}
-                </div>
 
                 <table class="dt-row-grouping table border-top dataTable dtr-column" id="DataTables_Table_2"
                     aria-describedby="DataTables_Table_2_info" style="width: 1035px;">

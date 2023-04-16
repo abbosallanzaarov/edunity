@@ -9,4 +9,9 @@ class course extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public function team(){
+        return $this->hasMany(Team::class);
+    }
+
+
 }

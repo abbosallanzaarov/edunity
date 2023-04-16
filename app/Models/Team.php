@@ -9,7 +9,14 @@ class Team extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function mentor(){
+
+    public function courses(){
+        return $this->belongsTo(course::class);
+    }
+
+
+    public function mentor()
+    {
         return $this->belongsTo(mentor::class);
     }
 }

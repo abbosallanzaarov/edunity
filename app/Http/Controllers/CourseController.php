@@ -20,6 +20,7 @@ class CourseController extends Controller
         $courses = course::all();
         $course_count = count($courses);
         return view('course.index',compact('courses','course_count'));
+        return view('course.index',compact('courses'));
     }
 
     /**
@@ -46,7 +47,6 @@ class CourseController extends Controller
         }
 
     }
-
     /**
      * Display the specified resource.
      *
@@ -105,5 +105,5 @@ class CourseController extends Controller
             $message = $course->full_name . ' ' .' Kurs O\'chirildi';
             return back()->with('deleteCourse' , $message);
         }
-    }
+}
 }

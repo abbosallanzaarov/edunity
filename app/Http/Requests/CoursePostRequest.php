@@ -25,7 +25,7 @@ class CoursePostRequest extends FormRequest
     {
         return [
             'full_name'   => 'required|min:1|max:100',
-            'salary'      => 'required|',
+            'salary'      => 'required',
             'description' => 'nullable',
             'image'       =>'nullable'
         ];

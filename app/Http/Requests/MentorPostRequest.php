@@ -27,9 +27,9 @@ class MentorPostRequest extends FormRequest
             'full_name'=>'required|max:55',
             "phone"    => 'nullable',
             'salary'   => 'nullable',
-            'image'    =>'nullable',
-            'email'    =>'required',
-            'password' =>'required',
+            'image'    =>'required',
+            'email'    =>'required|unique:users,email||unique:mentors,email',
+            'password' =>'required|min:4|max:20',
         ];
     }
 }
